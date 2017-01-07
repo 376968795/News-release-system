@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>My JSP 'singleNews.jsp' starting page</title>
+
+</head>
+<link rel="stylesheet" type="text/css" href="../css/singleNews.css" />
+<body>
+	<div id="cover"></div>
+	<!-- 登录 -->
+	<div id="divlogin">
+		<div id="divlll">
+				<div id="divtaitle">
+					<b>Login to your account</b>
+				</div>
+				<div id="divint">We're happy to see you return!Please log in
+					to continue.</div>
+				<div id="divuw">
+					 Userword&nbsp<input id="uw" type="text" name="uw">
+				</div>
+				<div id="divpw">
+					<div id="divp">
+						Password&nbsp<input id="pw" type="password" name="pw">
+					</div>
+					<div id="login">
+						<b>Log-in</b>
+					</div>
+				</div>
+				<div id="divgou">
+					<input id="c1" type="checkbox" name="gou">Remember me on
+					this computer
+				</div>
+		</div>
+		</div>
+	
+	<!--          顶部黄条               -->
+	<div id="div1">
+		<div id="div10"></div>
+		<div id="div11">
+			<div id="div12" onclick="a('${path}/main.jsp')">
+				<img src="../img/logo.png">
+			</div>
+			<div id="div13">
+				<img src="../img/line.png">&nbsp&nbsp<span id="span13">Everything
+					you want to know..</span>
+			</div>
+			<div id="div14">
+				<input id="te" type="text" value="">&nbsp<input id="img"
+					type="image" src="../img/search.png">
+			</div>
+			<div id="div15">
+				<b> <c:choose>
+			</c:when>
+						<c:otherwise>
+				登录
+			</c:otherwise>
+					</c:choose>
+				</b>
+			</div>
+			<div id="div16">
+				退出
+			</div>
+		</div>
+	</div>
+
+	<!--           国际啥的              -->
+	<div id="div2">
+			<div id=div21 class="hand1">国际</div>
+		<div id="div2111" class="hand" onclick="a('${path}/newslist.do?action=newslist&sid=1')">国际</div>
+		<div id=div22 class="hand1">国内</div>
+		<div id="div2112" class="hand" onclick="a('${path}/newslist.do?action=newslist&sid=2')">国内</div>
+		<div id=div23 class="hand1">科技</div>
+		<div id="div2113" class="hand" onclick="a('${path}/newslist.do?action=newslist&sid=3')">科技</div>
+		<div id=div24 class="hand1">手机</div>
+		<div id="div2114" class="hand" onclick="a('${path}/newslist.do?action=newslist&sid=4')">手机</div>
+		<div id=div25 class="hand1">军事</div>
+		<div id="div2115" class="hand" onclick="a('${path}/newslist.do?action=newslist&sid=5')">军事</div>
+		<div id=div26 class="hand1">生活</div>
+		<div id="div2116" class="hand" onclick="a('${path}/newslist.do?action=newslist&sid=6')">生活</div>
+		<div id=div27 class="hand1">体育</div>
+		<div id="div2117" class="hand" onclick="a('${path}/newslist.do?action=newslist&sid=7')">体育</div>
+		<div id=div28 class="hand1">娱乐</div>
+		<div id="div2118" class="hand" onclick="a('${path}/newslist.do?action=newslist&sid=8')">娱乐</div>
+		<div id=div29 class="hand1">汽车</div>
+		<div id="div2119" class="hand" onclick="a('${path}/newslist.do?action=newslist&sid=9')">汽车</div>
+	</div>
+	<div id=div3>
+		<div id=div211></div>
+		<div id=div221></div>
+		<div id=div231></div>
+		<div id=div241></div>
+		<div id=div251></div>
+		<div id=div261></div>
+		<div id=div271></div>
+		<div id=div281></div>
+		<div id=div291></div>
+	</div>
+	<div id="divmain">
+		<div id="divtitle">
+			<h1>${news.title}</h1>
+		</div>
+		<!-- 这里的图片width为100%，不设置高  -->
+		<div id="divtext">${news.newcontent }</div>
+
+		<div id="divdate">
+			<hr style="height:1px;border:none;border-top:1px dashed gray;" />
+			&nbsp&nbsp&nbsp&nbsp${news.addtime}&nbsp${news.author}
+			<hr style="height:1px;border:none;border-top:1px dashed gray;" />
+		</div>
+
+		<!-- 评论处  -->
+			<div id="divdiscuss">
+				<font id="p">人参与了评论</font>
+				<hr>
+				<div id="divdisc">
+					<!-- 评论内容 -->
+				</div>
+				
+				<div id="pinglun">
+					<font id="p">评论</font>
+					<hr>
+					<div id="context" contentEditable=true tabindex = "1">
+						<font color="666690" >请输入你的评论</font>
+					</div>
+					<div id="subm">
+						<b>发表</b>
+					</div>
+				</div>
+			
+			</div>
+	</div>
+	<form id="formmm" action="" method="post">
+	</form>
+	<input type="hidden" id="path" value="${path}">
+	<input type="hidden" id="newsid" value="${news.id}">
+	
+
+</body>
+<script src="../lib/jquery-2.0.0.min.js" type="text/javascript"></script>
+<script src="../js/singleNews.js" type="text/javascript"></script>
+</html>

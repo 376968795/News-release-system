@@ -1,0 +1,221 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<base href="<%=basePath%>">
+
+<title>My JSP 'main.jsp' starting page</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<body>
+
+<div id="cover"></div>
+	<!-- 登录 -->
+	<div id="divlogin">
+		<div id="divlll">
+				<div id="divtaitle">
+					<b>Login to your account</b>
+				</div>
+				<div id="divint">We're happy to see you return!Please log in
+					to continue.</div>
+				<div id="divuw">
+					 Userword&nbsp<input id="uw" type="text" name="uw">
+				</div>
+				<div id="divpw">
+					<div id="divp">
+						Password&nbsp<input id="pw" type="password" name="pw">
+					</div>
+					<div id="login">
+						<b>Log-in</b>
+					</div>
+				</div>
+				<div id="divgou">
+					<input id="c1" type="checkbox" name="gou">Remember me on
+					this computer
+				</div>
+		</div>
+		</div>
+
+	<!--          顶部黄条               -->
+	<div id="div1">
+		<div id="div10"></div>
+		<div id="div11">
+			<div id="div12" >
+				<img src="img/logo.png">
+			</div>
+			<div id="div13">
+				<img src="img/line.png">&nbsp&nbsp<span id="span13">Everything
+					you want to know..</span>
+			</div>
+			<div id="div14">
+				<input id="te" type="text" value="">&nbsp<input id="img"
+					type="image" src="img/search.png">
+			</div>
+			<div id="div15">
+				<b> <c:choose>
+						<c:when test="${!empty sessionScope.quser.id}">
+							${sessionScope.quser.username}
+						</c:when>
+						<c:otherwise>
+							登录
+						</c:otherwise>
+					</c:choose>
+				</b>
+			</div>
+			<div id="div16">
+				退出
+			</div>
+		</div>
+	</div>
+
+	<!--           国际啥的              -->
+	<div id="div2">
+		<div id=div21 class="hand1">国际</div>
+		<div id="div2111" class="hand" onclick="a('<%=path%>/newslist.do?action=newslist&sid=1')">国际</div>
+		<div id=div22 class="hand1">国内</div>
+		<div id="div2112" class="hand" onclick="a('<%=path%>/newslist.do?action=newslist&sid=2')">国内</div>
+		<div id=div23 class="hand1">科技</div>
+		<div id="div2113" class="hand" onclick="a('<%=path%>/newslist.do?action=newslist&sid=3')">科技</div>
+		<div id=div24 class="hand1">手机</div>
+		<div id="div2114" class="hand" onclick="a('<%=path%>/newslist.do?action=newslist&sid=4')">手机</div>
+		<div id=div25 class="hand1">军事</div>
+		<div id="div2115" class="hand" onclick="a('<%=path%>/newslist.do?action=newslist&sid=5')">军事</div>
+		<div id=div26 class="hand1">生活</div>
+		<div id="div2116" class="hand" onclick="a('<%=path%>/newslist.do?action=newslist&sid=6')">生活</div>
+		<div id=div27 class="hand1">体育</div>
+		<div id="div2117" class="hand" onclick="a('<%=path%>/newslist.do?action=newslist&sid=7')">体育</div>
+		<div id=div28 class="hand1">娱乐</div>
+		<div id="div2118" class="hand" onclick="a('<%=path%>/newslist.do?action=newslist&sid=8')">娱乐</div>
+		<div id=div29 class="hand1">汽车</div>
+		<div id="div2119" class="hand" onclick="a('<%=path%>/newslist.do?action=newslist&sid=9')">汽车</div>
+	</div>
+	<div id=div3>
+		<div id=div211></div>
+		<div id=div221></div>
+		<div id=div231></div>
+		<div id=div241></div>
+		<div id=div251></div>
+		<div id=div261></div>
+		<div id=div271></div>
+		<div id=div281></div>
+		<div id=div291></div>
+	</div>
+
+	<!--       超大背景图片             -->
+	<div id="div4">
+		<div id="div40">
+
+			<img id=img1 class="imgb" src="img/1.jpg" width="100%">
+			 <img id=img2 class="imgb" src="img/4.jpg" width="100%"> 
+			 <img id=img3 class="imgb" src="img/3.jpg" width="100%"> 
+			 <img id=img4 class="imgb" src="img/2.jpg" width="100%">
+			<img id="img5" src="img/11.jpg" width="100%"><!-- 白底，撑位置 -->
+		</div>
+		<div id="div41">
+			<input type="image" class="imgs" id="1" src="img/1s.jpg" width="100px" height="64px"> 
+			<input type="image" class="imgs" id="2" src="img/4s.jpg" width="100px" height="64px">
+			 <input type="image" class="imgs" id="3" src="img/3s.jpg" width="100px" height="64px">
+			 <input type="image" class="imgs" id="4" src="img/2s.jpg" width="100px" height="64px">
+		</div>
+			 
+	</div>
+
+	<!--           新闻列表              -->
+	<div id=div5>
+
+		<!--          最新            -->
+		<div id="div51">
+			<div id="div510"></div>
+			最<strong><font size="20px" color="black">新</font> </strong>
+			<hr style="height:1px;border:none;border-top:1px solid #555555;" />
+			<div id="line"></div>
+			<div id="div511">
+				<img src="img/6.jpg" width="100%">
+			</div>
+			<!-- 新闻处 -->
+			<c:forEach items="${requestScope.listx}" var="x" varStatus="i">
+				<div id="div51${i.index+2}" class="divx" >
+					<a id="c${i.index+2}" class="aa zx" href="<%=path%>/checknews.do?id=${x.id }"><b>${x.title}</b>
+					</a> <br> <font color="gray"><i>${x.type}</i>
+					</font>
+				</div>
+			
+			</c:forEach>
+			
+		</div>
+
+		<!--          最热            -->
+		<div id="div52">
+			最<strong><font size="20px" color="black">热</font> </strong>
+			<hr id="hr1"
+				style="height:1px;border:none;border-top:1px solid #555555;" />
+			<div id="line2"></div>
+			
+			<!-- 新闻处 -->
+			<c:forEach items="${requestScope.listr}" var="r" varStatus="i">
+				<c:choose>
+					<c:when test="${i.index==0}">
+						<div id="d52${i.index+1 }0" class="hand1">手机</div>
+						<div id="d52${i.index+1 }1" class="divcolor hand">手机</div>
+					</c:when>
+					<c:when test="${i.index==1}">
+						<div id="d52${i.index+1 }0" class="hand1">游戏</div>
+						<div id="d52${i.index+1 }1" class="divcolor hand">游戏</div>
+					</c:when>
+					<c:when test="${i.index==2}">
+						<div id="d52${i.index+1 }0" class="hand1">生活</div>
+						<div id="d52${i.index+1 }1" class="divcolor hand">生活</div>
+					</c:when>
+					<c:when test="${i.index==3}">
+						<div id="d52${i.index+1 }0" class="hand1">动物</div>
+						<div id="d52${i.index+1 }1" class="divcolor hand">动物</div>
+					</c:when>
+				</c:choose>
+				<div id="div52${i.index+1 }">
+					<div class="divimg">
+						<img src="img/${i.index+7 }.jpg" width="100%" height="100%">
+					</div>
+					<div  class="divzheng">
+						<div class="divt">
+							<a id="c5${i.index+1 }" class="aa" href="<%=path%>/checknews.do?id=${r.id }"><b>${r.title}</b>
+							</a>
+						</div>
+						<div class="divc">
+							<font color="gray">${r.newcontent}<br>
+							</font>
+						</div>
+						<font color="gray"><i>${r.type}</i> </font>
+					</div>
+				</div>
+			
+			</c:forEach>
+
+		</div>
+
+		<!--          评论最多            -->
+		<div id=div53>
+			热<strong><font size="20px" color="black">议</font> </strong>
+			<hr style="height:1px;border:none;border-top:1px solid #555555;" />
+			<div id="line3"></div>
+			<c:forEach items="${requestScope.listp}" var="p" varStatus="i">
+				<c:if test="${!empty p.title }">
+					<div id="div53${i.index+1 }" class="div53">
+						<div id="div53${i.index+1 }1" class="div0123">0${i.index+1 }</div>
+							<div id="div53${i.index+1 }2" class="div3210">
+							<a class="ac" href="<%=path%>/checknews.do?id=${p.id }"><b>${p.title}</b> </a>
+						</div>
+					</div>
+				</c:if>
+			</c:forEach>
+
+		</div>
+	</div>
+	<form id="formmm" action="" method="post"></form>
+	<input type="hidden" id="path" value="<%=path%>">
+	<input type="hidden" id="userid" value="${sessionScope.quser.id}">
+	
+
+</body>
+	<script src="lib/jquery-2.0.0.min.js" type="text/javascript"></script>
+	<script src="js/color.js" type="text/javascript"></script>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zbl.news.mapper.Hmapper">
+	<!-- 后台登录 -->
+	<select id="hLogin" parameterType="HLogin" resultType="HUser">
+		select * from Huser where userword=#{userword} and password=#{password}
+	</select>
+	
+	<!-- 新闻发布 -->
+	<insert id="createNews" parameterType="CreateNewsVo">
+		insert into news(sid,title,newcontent,author) values(#{sid},#{title},#{newcontent},#{author})
+	</insert>
+	
+	<!-- 获取新闻列表 -->
+	<select id="hReview" parameterType="String" resultType="News">
+		select n1.id,sid,h1.username reviewname,title,author,addtime,newstatus,hid,name type from news n1 inner join Newsclasses n2 on n1.sid=n2.id inner join Huser h1 on n1.hid=h1.id where newstatus=#{value}
+	</select>
+
+	<!-- 异步审核新闻 -->
+	<update id="ajaxHreview" parameterType="AjaxHreview">
+		update news set newstatus=1,hid=#{userid} where id=#{id}
+	</update>
+	
+	<!-- 异步删除新闻 -->
+	<delete id="ajaxDelete" parameterType="String">
+		delete news where id=#{value}
+	</delete>
+</mapper>

@@ -1,0 +1,104 @@
+html,body{
+margin:0px;
+overflow-x:hidden;
+}
+#divtitle{
+	width: 100%;
+	height:30px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#d3deeb));
+	color: #317eac;
+	padding-left: 50px;
+	padding-top: 10px;
+}
+#div0{
+	width: 95%;
+	height: 40px;
+	margin-top: 20px;
+}
+#div01{
+	float:left;
+	border-radius: 5px;
+	width: 70px;
+	height: 30px;
+	text-align:center;
+	line-height:30px;
+	background-color: #45aae4;
+	color:white;
+	margin-left: 40px;
+	cursor: pointer;
+}
+#div02{
+	float:left;
+	width: 230px;
+	height: 30px;
+	text-align:center;
+	line-height:30px;
+	margin-left: 730px;
+}
+#inp{
+	float: left;
+	height: 100%;
+	color: #999999;
+	border:2px solid #e7ebee;
+	
+}
+#div021{
+	border-radius: 3px;
+	background-color: #4baee7;
+	color: white;
+	cursor: pointer;
+}
+#div021:HOVER{
+	background-color: #198ccd;
+}
+#div01:HOVER{
+	background-color: #198ccd;
+}
+#div1{
+	width: 95%;
+	height: 370px;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+#div2{
+	text-align:center;
+	margin:0 auto;
+	height: 40px;
+	width: 300px;
+	font-size: 30px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 10px gray;
+}
+.page1{
+	color:#41ace9;
+	width:15%;
+	font-size:20px;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}
+.page2{
+	color:#41ace9;
+	width:25%;
+	font-size:20px;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}
+.page3{
+	font-family:fantasy;
+	color:white;
+	background-color:#41ace9;
+	width:20%;
+	font-size:20px;
+	float: left;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 0px 10px gray;
+}
